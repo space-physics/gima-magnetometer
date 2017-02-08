@@ -5,7 +5,7 @@ from numpy import array
 from datetime import datetime,timedelta
 from dateutil.parser import parse
 #
-from histutils.fortrandates import forceutc
+from sciencedates import forceutc
 
 def readgima(fn, tlim):
     """
