@@ -1,0 +1,7 @@
+nose
+numpy
+python-dateutil
+xarray
+matplotlib
+seaborn
+netcdf4
