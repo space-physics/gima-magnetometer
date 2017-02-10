@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-try:
-    import conda.cli
-    conda.cli.main('install','--file','requirements.txt')
-except Exception as e:
-    print(e)
-    import pip
-    pip.main(['install','-r','requirements.txt'])
+req = ['msp_aurora','sciencedates',
+        'nose','numpy','python-dateutil','xarray','matplotlib','seaborn','netcdf4']
 
 setup(name='gima_magnetometer',
       packages=['gimamag'],
@@ -22,7 +17,7 @@ setup(name='gima_magnetometer',
       'Topic :: Scientific/Engineering :: GIS',
       'Programming Language :: Python :: 3.6',
       ],
-      install_requires=['msp_aurora','sciencedates'],
+      install_requires=req,
       dependency_links=[
       'https://github.com/scienceopen/meridian-spectrometer-reader/tarball/master#egg=msp_aurora'
       ],
