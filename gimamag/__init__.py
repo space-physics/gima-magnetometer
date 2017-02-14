@@ -1,14 +1,35 @@
 from pathlib import Path
-from netCDF4 import Dataset
+import netCDF4 as nc
 #from xarray import DataArray
 from numpy import array
 from datetime import datetime,timedelta
 from dateutil.parser import parse
+import xarray as xr
 #
 from sciencedates import forceutc
 
-def readgima(fn, tlim):
+def readgima(flist,tlim):
     """
+    Helper function to concatenate hourly file data
+    """
+    if isinstance(flist,(str,Path)):
+        flist = [flist]
+
+    flist = [Path(f).expanduser() for f in flist]
+
+    for fn in flist:
+        B = readgimafile(fn,tlim)
+
+        if fn.samefile(flist[0]):
+            Bs = B
+        else:
+            Bs = xr.concat([Bs,B],dim='time')
+
+    return Bs
+
+def readgimafile(fn, tlim):
+    """
+    main file reading function
     """
     fn = Path(fn).expanduser()
     if not fn.is_file():
@@ -16,7 +37,7 @@ def readgima(fn, tlim):
 #%% date from filename -- only way
     d0 = forceutc(datetime.strptime(fn.stem[-13:-3],'%Y_%m_%d'))
 
-    with Dataset(str(fn),'r') as f:
+    with nc.Dataset(str(fn),'r') as f:
 #%% load by time
         th = f['time'][:]
         t=[]
@@ -34,10 +55,9 @@ def readgima(fn, tlim):
         else:
             tind = slice(None)
 #%% load data
-        t = t[tind]
-        Bh = f['hcomp'][tind]
-        Bd = f['dcomp'][tind]
-        Bz = f['zcomp'][tind]
+        B = xr.Dataset({'Bh':(['time'], f['hcomp'][tind]),
+                        'Bd':(['time'], f['dcomp'][tind]),
+                        'Bz':(['time'], f['zcomp'][tind])},
+                        coords={'time':t[tind]})
 
-
-    return t,Bh,Bd,Bz
+    return B
