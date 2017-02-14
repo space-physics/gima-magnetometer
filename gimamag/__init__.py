@@ -11,6 +11,8 @@ def readgima(fn, tlim):
     """
     """
     fn = Path(fn).expanduser()
+    if not fn.is_file():
+        raise FileNotFoundError(f'{fn} does not exist')
 #%% date from filename -- only way
     d0 = forceutc(datetime.strptime(fn.stem[-13:-3],'%Y_%m_%d'))
 

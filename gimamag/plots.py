@@ -1,11 +1,14 @@
-from msp_aurora.plots import tickfix
 from matplotlib.pyplot import subplots
+#
+from sciencedates import tickfix
 
 def plotmag(t,Bh,Bd,Bz):
     if len(t)==0:
         return
 
     fg,axs = subplots(3,1,sharex=True)
+
+    fg.suptitle(t[0].strftime('%Y-%m-%d'))
 
     ax = axs[0]
     ax.plot(t,Bh,label='Bh')
