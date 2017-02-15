@@ -12,10 +12,9 @@ https://www.asf.alaska.edu/magnetometer/download/
 
 ./LoadGIMA.py ~/data/2013-04-14/mag/poker_2013_04_14_08.nc -t 2013-04-14T08:20 2013-04-14T08:35
 
-./LoadGIMA.py ~/data/2011-03-01/mag/poker_2011_03_01_10.nc ~/data/2011-03-01/mag/poker_2011_03_01_11.nc
-./LoadGIMA.py ~/data/2011-03-01/mag/poker_2011_03_01_11.nc -t 2011-03-01T11:00 2011-03-1T11:10:00.1
+./LoadGIMA.py ~/data/2011-03-01/mag/poker_2011_03_01_09.nc ~/data/2011-03-01/mag/poker_2011_03_01_10.nc -t 2011-03-01T09:45 2011-03-1T10:30
 
-./LoadGIMA.py ~/data/2007-03-23/mag/poker_2007_03_23_11.nc -t 2007-03-23T11:17 2007-03-23T11:28
+./LoadGIMA.py ~/data/2007-03-23/mag/poker_2007_03_23_11.nc -t 2007-03-23T11 2007-03-23T12
 """
 
 if __name__ == '__main__':
