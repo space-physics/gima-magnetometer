@@ -6,9 +6,18 @@ from sciencedates import tickfix
 
 def plotmag(B):
 
-    # convert xarray datetime64[ns] to Python datetime
-    t = [datetime.fromtimestamp(t/1e9,tz=UTC) for t in B['time'].values]
+    t = B['time'].values
 
+    # convert xarray datetime64[ns] to Python datetime
+    if isinstance(t[0],int): # datetime64[ns], seems to happen when using xarray.concat
+        t = [datetime.fromtimestamp(tt/1e9,tz=UTC) for tt in t]
+    elif isinstance(t[0],datetime):
+        t = B['time'].values
+    else:
+        raise TypeError(f'unknown time class {type(B["time"][0])}')
+
+
+    assert isinstance(t[0], datetime)
 
     fg,axs = subplots(3,1,sharex=True)
 

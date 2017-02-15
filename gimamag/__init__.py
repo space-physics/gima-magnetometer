@@ -5,6 +5,7 @@ from numpy import array
 from datetime import datetime,timedelta
 from dateutil.parser import parse
 import xarray as xr
+import tarfile
 #
 from sciencedates import forceutc
 
