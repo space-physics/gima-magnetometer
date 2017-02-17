@@ -10,9 +10,11 @@ sns.set_style('whitegrid')
 GIMA data download:
 https://www.asf.alaska.edu/magnetometer/download/
 
-./LoadGIMA.py ~/data/2013-04-14/mag/poker_2013_04_14_08.nc -t 2013-04-14T08:20 2013-04-14T08:35
+./LoadGIMA.py ~/data/2013-04-14/mag/poker_2013_04_14_08.nc  ~/data/2013-04-14/mag/poker_2013_04_14_09.nc -t 2013-04-14T08:35 2013-04-14T09:25:00.1
 
-./LoadGIMA.py ~/data/2011-03-01/mag/poker_2011_03_01_09.nc ~/data/2011-03-01/mag/poker_2011_03_01_10.nc -t 2011-03-01T09:45 2011-03-1T10:30
+./LoadGIMA.py ~/data/2013-04-14/mag/poker_2013_04_14_08.nc -t 2013-04-14T08:20 2013-04-14T08:35:00.1
+
+./LoadGIMA.py ~/data/2011-03-01/mag/poker_2011_03_01_09.nc ~/data/2011-03-01/mag/poker_2011_03_01_10.nc -t 2011-03-01T09:45 2011-03-1T10:30:00.1
 
 ./LoadGIMA.py ~/data/2007-03-23/mag/poker_2007_03_23_11.nc -t 2007-03-23T11 2007-03-23T12
 """
