@@ -5,13 +5,14 @@ from numpy import array
 from datetime import datetime,timedelta
 from dateutil.parser import parse
 import xarray as xr
-import tarfile
 #
 from sciencedates import forceutc
 
 def readgima(flist,tlim):
     """
     Helper function to concatenate hourly file data
+
+    FIXME could just use tarfile to avoid extracting files
     """
     if isinstance(flist,(str,Path)):
         flist = [flist]
