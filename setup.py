@@ -9,7 +9,7 @@ setup(name='gima_magnetometer',
       version = '0.6',
       description='Plotting and analysis of UAF GIMA Magnetometer data',
       author = 'Michael Hirsch, Ph.D.',
-      url = 'https://github.com/scienceopen/gima-magnetometer',
+      url = 'https://github.com/scivision/gima-magnetometer',
       classifiers=[
       'Intended Audience :: Science/Research',
       'Development Status :: 3 - Alpha',
