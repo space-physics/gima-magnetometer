@@ -4,7 +4,7 @@ from matplotlib.pyplot import show
 from gimamag import readgima
 from gimamag.plots import plotmag
 import seaborn as sns
-sns.set_context('talk',font_scale=1.5)
+sns.set_context('talk',font_scale=1.3)
 sns.set_style('whitegrid')
 """
 GIMA data download:
