@@ -1,8 +1,16 @@
 #!/usr/bin/env python
-from setuptools import setup
+req = ['nose','numpy','python-dateutil','xarray','matplotlib','seaborn','netcdf4']
+pipreq= ['sciencedates']
 
-req = ['sciencedates',
-        'nose','numpy','python-dateutil','xarray','matplotlib','seaborn','netcdf4']
+import pip
+try:
+    import conda.cli
+    conda.cli.main('install',*req)
+except Exception as e:
+    pip.main(['install'] + req)
+pip.main(['install'] + pipreq)
+# %%
+from setuptools import setup
 
 setup(name='gima_magnetometer',
       packages=['gimamag'],
@@ -17,6 +25,6 @@ setup(name='gima_magnetometer',
       'Topic :: Scientific/Engineering :: GIS',
       'Programming Language :: Python :: 3.6',
       ],
-      install_requires=req,
+      install_requires=req+pipreq,
 	  )
 
