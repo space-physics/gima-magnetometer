@@ -3,12 +3,13 @@ from matplotlib.pyplot import show
 #
 from gimamag import readgima
 from gimamag.plots import plotmag
+#
 import seaborn as sns
 sns.set_context('talk',font_scale=1.3)
 sns.set_style('whitegrid')
 """
 GIMA data download:
-https://www.asf.alaska.edu/magnetometer/download/
+http://www.gi.alaska.edu/magnetometer/archive
 
 ./LoadGIMA.py ~/data/2013-04-14/mag/poker_2013_04_14_08.nc  ~/data/2013-04-14/mag/poker_2013_04_14_09.nc -t 2013-04-14T08:35 2013-04-14T09:25:00.1
 
