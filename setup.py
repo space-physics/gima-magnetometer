@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-req = ['nose','numpy','python-dateutil','xarray','netcdf4','sciencedates']
-
+install_requires = ['numpy','python-dateutil','xarray','netcdf4','sciencedates']
+tests_require=['nose','coveralls']
 # %%
 from setuptools import setup,find_packages
 
@@ -17,8 +17,10 @@ setup(name='gima_magnetometer',
       'Topic :: Scientific/Engineering :: GIS',
       'Programming Language :: Python :: 3.6',
       ],
-      install_requires=req,
-      extras_require={'plot':['matplotlib','seaborn',]},
+      install_requires=install_requires,
+      tests_require=tests_require,
+      extras_require={'plot':['matplotlib','seaborn',],
+                      'tests':tests_require},
       python_requires='>=3.6',
 	  )
 
