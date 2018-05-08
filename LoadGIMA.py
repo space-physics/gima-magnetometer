@@ -4,9 +4,12 @@ from matplotlib.pyplot import show
 from gimamag import readgima
 from gimamag.plots import plotmag
 #
-import seaborn as sns
-sns.set_context('talk',font_scale=1.3)
-sns.set_style('whitegrid')
+try:
+    import seaborn as sns
+    sns.set_context('talk',font_scale=1.3)
+    sns.set_style('whitegrid')
+except ImportError:
+    pass
 """
 GIMA data download:
 http://www.gi.alaska.edu/magnetometer/archive

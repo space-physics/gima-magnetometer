@@ -5,7 +5,7 @@ import numpy as np
 import numpy.testing as npt
 from gimamag import readgima
 
-fn = Path(__file__).parents[1] / 'tests/poker_2017_11_16_10.nc'
+fn = Path(__file__).parent / 'poker_2017_11_16_10.nc'
 t=np.datetime64(datetime(2017, 11, 16, 10, 0, 2, 1600))
 
 def test_readmag():
@@ -19,5 +19,4 @@ def test_readmag():
 
 
 if __name__ == '__main__':
-    test_readmag()
     npt.run_module_suite()
