@@ -5,10 +5,9 @@ from datetime import datetime, timedelta
 from dateutil.parser import parse
 import xarray as xr
 from typing import List, Union
-from sciencedates import forceutc
 
 
-def readgima(flist: List[Path], tlim: List[Union[str, datetime]]=None):
+def readgima(flist: List[Path], tlim: List[Union[str, datetime]] = None):
     """
     Helper function to concatenate hourly file data
 
@@ -31,7 +30,7 @@ def readgima(flist: List[Path], tlim: List[Union[str, datetime]]=None):
 
 
 def readgimafile(fn: Path,
-                 tlim: List[Union[str, datetime]]=None) -> xr.DataArray:
+                 tlim: List[Union[str, datetime]] = None) -> xr.DataArray:
     """
     main file reading function
     """
@@ -39,7 +38,7 @@ def readgimafile(fn: Path,
     if not fn.is_file():
         raise FileNotFoundError(f'{fn} does not exist')
 # %% date from filename -- only way
-    d0 = forceutc(datetime.strptime(fn.stem[-13:-3], '%Y_%m_%d'))
+    d0 = datetime.strptime(fn.stem[-13:-3], '%Y_%m_%d')
 
     with nc.Dataset(fn, 'r') as f:
         # %% load by time
@@ -55,7 +54,7 @@ def readgimafile(fn: Path,
         t = np.asarray(t)
         if tlim is not None and len(tlim) == 2:
             if isinstance(tlim[0], str):
-                tlim = [forceutc(parse(t)) for t in tlim]
+                tlim = [parse(t) for t in tlim]  # type: ignore
             tind = (tlim[0] <= t) & (t <= tlim[1])  # type: ignore
         else:
             tind = slice(None)

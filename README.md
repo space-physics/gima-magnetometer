@@ -1,5 +1,6 @@
-[![image](https://travis-ci.org/scivision/gima-magnetometer.svg?branch=master)](https://travis-ci.org/scivision/gima-magnetometer)
-[![image](https://coveralls.io/repos/github/scivision/gima-magnetometer/badge.svg?branch=master)](https://coveralls.io/github/scivision/gima-magnetometer?branch=master)
+[![Actions Status](https://github.com/space-physics/gima_magnetometer/workflows/ci/badge.svg)](https://github.com/space-physics/gima_magnetometer/actions)
+
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/952d590769b6bee31551/maintainability)](https://codeclimate.com/github/scivision/gima-magnetometer/maintainability)
 
 # gima-magnetometer
