@@ -8,6 +8,12 @@ UAF Geophysical Institute magnetometer network data read and plot
 
     pip install -e .
 
-## Data
+## Usage
+
+```python
+python LoadGIMA.py myfile.cdf
+```
+
+### Data
 
 GIMA data [download](http://www.gi.alaska.edu/magnetometer/archive)
