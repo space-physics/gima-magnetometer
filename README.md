@@ -10,8 +10,8 @@ UAF Geophysical Institute magnetometer network data read and plot
 
 ## Usage
 
-```python
-python LoadGIMA.py myfile.cdf
+```sh
+python LoadGIMA.py myfile.nc
 ```
 
 ### Data
