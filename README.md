@@ -16,4 +16,4 @@ python LoadGIMA.py myfile.nc
 
 ### Data
 
-GIMA data [download](http://www.gi.alaska.edu/magnetometer/archive)
+GIMA data [download](https://www.gi.alaska.edu/monitors/magnetometer/archive)
